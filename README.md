@@ -35,3 +35,29 @@ python tests.py
 ## Формат даних
 Файл `data.txt`, один запис на рядок у форматі:
 `дата;категорія;сума;коментар`
+## Запуск вебсервісу та приклади запитів (API)
+
+Запустити сервер:
+```bash
+python app.py
+```
+
+Додати запис:
+```bash
+curl -i -X POST http://localhost:5000/items -H "Content-Type: application/json" -d '{"date": "2026-11-25", "category": "їжа", "amount": 250, "note": "обід"}'
+```
+
+Отримати всі записи:
+```bash
+curl -i http://localhost:5000/items
+```
+
+Отримати звіт за категоріями:
+```bash
+curl -i http://localhost:5000/report
+```
+
+Видалити запис:
+```bash
+curl -i -X DELETE http://localhost:5000/items/1
+```
