@@ -4,7 +4,7 @@ import storage
 import logic
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://myproject-dl9t.netlify.app"])
 storage.init()
 
 @app.get("/items")
