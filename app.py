@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import storage
 import logic
 
 app = Flask(__name__)
+CORS(app)
 storage.init()
-
 
 @app.get("/items")
 def list_items():
